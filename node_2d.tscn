@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cqavbhwiurrsc"]
+
+[ext_resource type="PackedScene" uid="uid://c613x4guqbbfi" path="res://scenes/fireboy.tscn" id="1_wtcfe"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wtcfe"]
+
+[node name="Game" type="Node2D" unique_id=509376788]
+
+[node name="CharacterBody2D" parent="." unique_id=769429523 instance=ExtResource("1_wtcfe")]
+position = Vector2(1, 78)
+scale = Vector2(0.2, 0.2)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=155703522]
+position = Vector2(1, 59)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1027925172]
+position = Vector2(1, 107)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1780252857]
+position = Vector2(4, -3)
+shape = SubResource("WorldBoundaryShape2D_wtcfe")
