@@ -299,9 +299,9 @@ autoplay = "idle"
 frame_progress = 0.38194242
 
 [node name="Head" type="AnimatedSprite2D" parent="." unique_id=1568099964]
-position = Vector2(77, -161)
+position = Vector2(80, -161)
 sprite_frames = SubResource("SpriteFrames_wedb8")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
 offset = Vector2(-70, 0)
 
