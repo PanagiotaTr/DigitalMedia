@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db0eab65ijaho"
-path="res://.godot/imported/run_try1.png-dad1d1859082f67abe7fe22c693250df.ctex"
+uid="uid://gytmo70c8ykw"
+path="res://.godot/imported/head_jump_up.png-ad88570f56fd13c5646ecdc308d60e60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/watergirl/run_try1.png"
-dest_files=["res://.godot/imported/run_try1.png-dad1d1859082f67abe7fe22c693250df.ctex"]
+source_file="res://assets/sprites/watergirl/head_jump_up.png"
+dest_files=["res://.godot/imported/head_jump_up.png-ad88570f56fd13c5646ecdc308d60e60.ctex"]
 
 [params]
 

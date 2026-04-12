@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbywvuvw58rpu"
-path="res://.godot/imported/try_run.png-cd4e2a16108c78869b309a02d7a6014d.ctex"
+uid="uid://bim6x7sahkixg"
+path="res://.godot/imported/head_jump_idle.png-88952680b7dc4c4973e45d5888c522c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/watergirl/try_run.png"
-dest_files=["res://.godot/imported/try_run.png-cd4e2a16108c78869b309a02d7a6014d.ctex"]
+source_file="res://assets/sprites/watergirl/head_jump_idle.png"
+dest_files=["res://.godot/imported/head_jump_idle.png-88952680b7dc4c4973e45d5888c522c7.ctex"]
 
 [params]
 

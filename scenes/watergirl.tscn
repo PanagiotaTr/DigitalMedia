@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://6uqdnurxmlnm" path="res://assets/sprites/watergirl/body_run.png" id="2_yu0ls"]
 [ext_resource type="Texture2D" uid="uid://brj6h7bb517pk" path="res://assets/sprites/watergirl/head_fall.png" id="3_e2aqf"]
 [ext_resource type="Texture2D" uid="uid://ci1xigghoitoh" path="res://assets/sprites/watergirl/head_idle.png" id="4_rgw40"]
-[ext_resource type="Texture2D" uid="uid://bim6x7sahkixg" path="res://assets/sprites/watergirl/head_jump.png" id="5_fyasl"]
-[ext_resource type="Texture2D" uid="uid://db0eab65ijaho" path="res://assets/sprites/watergirl/run_try1.png" id="6_8pwif"]
+[ext_resource type="Texture2D" uid="uid://bim6x7sahkixg" path="res://assets/sprites/watergirl/head_jump_idle.png" id="5_fyasl"]
+[ext_resource type="Texture2D" uid="uid://db0eab65ijaho" path="res://assets/sprites/watergirl/head_run.png" id="6_8pwif"]
+[ext_resource type="Texture2D" uid="uid://gytmo70c8ykw" path="res://assets/sprites/watergirl/head_jump_up.png" id="6_yu0ls"]
 
 [sub_resource type="GDScript" id="GDScript_8pwif"]
 script/source = "extends Node2D
@@ -172,6 +173,30 @@ region = Rect2(832, 0, 208, 477)
 atlas = ExtResource("5_fyasl")
 region = Rect2(1040, 0, 208, 477)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbweu"]
+atlas = ExtResource("6_yu0ls")
+region = Rect2(4, 0, 518, 474)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fotbb"]
+atlas = ExtResource("6_yu0ls")
+region = Rect2(772, 0, 464, 474)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kc027"]
+atlas = ExtResource("6_yu0ls")
+region = Rect2(1512, 0, 504, 474)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvko6"]
+atlas = ExtResource("6_yu0ls")
+region = Rect2(2238, 0, 478, 474)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iheli"]
+atlas = ExtResource("6_yu0ls")
+region = Rect2(2986, 0, 532, 474)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8eugx"]
+atlas = ExtResource("6_yu0ls")
+region = Rect2(3726, 0, 425, 474)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_yu0ls"]
 atlas = ExtResource("6_8pwif")
 region = Rect2(0, 0, 519, 474)
@@ -260,7 +285,30 @@ animations = [{
 "texture": SubResource("AtlasTexture_if7ef")
 }],
 "loop": true,
-"name": &"jump",
+"name": &"jump_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbweu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fotbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kc027")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvko6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iheli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8eugx")
+}],
+"loop": true,
+"name": &"jump_up",
 "speed": 5.0
 }, {
 "frames": [{
@@ -294,14 +342,13 @@ script = SubResource("GDScript_8pwif")
 [node name="Body" type="AnimatedSprite2D" parent="." unique_id=81288338]
 position = Vector2(0, -50)
 sprite_frames = SubResource("SpriteFrames_nbweu")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
-frame_progress = 0.38194242
 
 [node name="Head" type="AnimatedSprite2D" parent="." unique_id=1568099964]
-position = Vector2(80, -161)
+position = Vector2(80, -156)
 sprite_frames = SubResource("SpriteFrames_wedb8")
-animation = &"run"
+animation = &"jump_idle"
 autoplay = "idle"
 offset = Vector2(-70, 0)
 
