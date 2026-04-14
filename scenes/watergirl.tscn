@@ -342,14 +342,15 @@ script = SubResource("GDScript_8pwif")
 [node name="Body" type="AnimatedSprite2D" parent="." unique_id=81288338]
 position = Vector2(0, -50)
 sprite_frames = SubResource("SpriteFrames_nbweu")
-animation = &"run"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="Head" type="AnimatedSprite2D" parent="." unique_id=1568099964]
 position = Vector2(80, -156)
 sprite_frames = SubResource("SpriteFrames_wedb8")
-animation = &"jump_idle"
+animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.29583508
 offset = Vector2(-70, 0)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=2020669084]

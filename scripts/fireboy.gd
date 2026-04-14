@@ -24,8 +24,7 @@ func _physics_process(delta: float) -> void:
 	if direction < 0:
 		body_sprite.flip_h = true
 		head_sprite.flip_h = true
-		
-	if direction > 0:
+	else:
 		body_sprite.flip_h = false
 		head_sprite.flip_h = false
 	
