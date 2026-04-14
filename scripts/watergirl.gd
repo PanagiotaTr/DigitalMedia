@@ -39,8 +39,12 @@ func _physics_process(delta: float) -> void:
 				body_sprite.play("idle")
 				head_sprite.play("jump_idle")
 		else:
-			body_sprite.play("idle")
-			head_sprite.play("fall")
+			if direction != 0:
+				body_sprite.play("run")
+				head_sprite.play("run") #"fall"
+			else:
+				body_sprite.play("idle")
+				head_sprite.play("fall")
 
 	if direction:
 		velocity.x = direction * SPEED
