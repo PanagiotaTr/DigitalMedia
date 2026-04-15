@@ -2,11 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://c613x4guqbbfi" path="res://scenes/fireboy.tscn" id="1_wtcfe"]
 [ext_resource type="PackedScene" uid="uid://bp21gobbmx54k" path="res://scenes/watergirl.tscn" id="2_0e48y"]
-[ext_resource type="Script" uid="uid://cj6d0b2t15pfc" path="res://scripts/watergirl.gd" id="3_epypp"]
 [ext_resource type="Texture2D" uid="uid://opcxbp7v8hwc" path="res://assets/sprites/terrain/lava.png" id="4_0hol4"]
 [ext_resource type="PackedScene" uid="uid://d2u0qufjrqx66" path="res://scenes/lava.tscn" id="4_d21ai"]
+[ext_resource type="PackedScene" uid="uid://ckv8vp7v2rde" path="res://scenes/red_coin.tscn" id="4_rj586"]
 [ext_resource type="Texture2D" uid="uid://bxbog845muo0b" path="res://assets/sprites/terrain/water.png" id="6_d21ai"]
 [ext_resource type="Texture2D" uid="uid://cbd4cdgbfkoqb" path="res://assets/sprites/terrain/Terrain (32x32).png" id="6_kdubu"]
+[ext_resource type="PackedScene" uid="uid://dji3fkrcra8kn" path="res://scenes/blue_coin.tscn" id="8_rj586"]
+[ext_resource type="PackedScene" uid="uid://bsxpekhgodg7s" path="res://scenes/purple_coin.tscn" id="9_4d7sh"]
+[ext_resource type="PackedScene" uid="uid://d24it6kgfg41e" path="res://scenes/green_coin.tscn" id="10_ir8iy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
 size = Vector2(26.5, 648.5)
@@ -241,7 +244,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_x0ka3"]
 tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 3
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ir8iy")
 sources/1 = SubResource("TileSetAtlasSource_hqns4")
 sources/2 = SubResource("TileSetAtlasSource_d21ai")
@@ -249,15 +252,12 @@ sources/2 = SubResource("TileSetAtlasSource_d21ai")
 [node name="Game" type="Node2D" unique_id=509376788]
 
 [node name="Fireboy" parent="." unique_id=769429523 instance=ExtResource("1_wtcfe")]
-position = Vector2(-472.99997, 225.99998)
+position = Vector2(-489, 232.00002)
 scale = Vector2(0.15, 0.15)
-collision_mask = 2
 
-[node name="Watergirl" parent="." unique_id=1543836403 instance=ExtResource("2_0e48y")]
-position = Vector2(145, 83)
+[node name="Watergirl" parent="." unique_id=1759271356 instance=ExtResource("2_0e48y")]
+position = Vector2(185, 235)
 scale = Vector2(0.15, 0.15)
-collision_mask = 2
-script = ExtResource("3_epypp")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=155703522]
 position = Vector2(1, 59)
@@ -283,3 +283,27 @@ tile_map_data = PackedByteArray("AAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAA
 [node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=898795613]
 tile_map_data = PackedByteArray("AADw/wgAAgACAAEAAADx/wgAAgACAAEAAADy/wgAAgACAAEAAADz/wgAAgACAAEAAAD0/wgAAgACAAEAAAD1/wgAAgACAAEAAAD2/wgAAgACAAEAAAD3/wgAAgACAAEAAAABAAgAAgACAAEAAAACAAgAAgACAAEAAAADAAgAAgACAAEAAAAEAAgAAgACAAEAAAAFAAgAAgACAAEAAAAGAAgAAgACAAEAAAAHAAgAAgACAAEAAAD6/wYAAgACAAEAAAD7/wYAAgACAAEAAAD8/wYAAgACAAEAAAD9/wYAAgACAAEAAAD+/wYAAgACAAEAAAA=")
 tile_set = SubResource("TileSet_x0ka3")
+
+[node name="Blue_Coin" parent="." unique_id=2085393169 instance=ExtResource("8_rj586")]
+position = Vector2(138, 237)
+
+[node name="Blue_Coin2" parent="." unique_id=1615830583 instance=ExtResource("8_rj586")]
+position = Vector2(-410, 235)
+
+[node name="Red_Coin" parent="." unique_id=1462983711 instance=ExtResource("4_rj586")]
+position = Vector2(-352, 232)
+
+[node name="Red_Coin2" parent="." unique_id=1799093025 instance=ExtResource("4_rj586")]
+position = Vector2(86, 239)
+
+[node name="Purple_Coin" parent="." unique_id=162450931 instance=ExtResource("9_4d7sh")]
+position = Vector2(-297, 234)
+
+[node name="Purple_Coin2" parent="." unique_id=1412646799 instance=ExtResource("9_4d7sh")]
+position = Vector2(51, 236)
+
+[node name="Green_Coin" parent="." unique_id=821650299 instance=ExtResource("10_ir8iy")]
+position = Vector2(-164, 174)
+
+[node name="Green_Coin2" parent="." unique_id=264288463 instance=ExtResource("10_ir8iy")]
+position = Vector2(111, 235)
