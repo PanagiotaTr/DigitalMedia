@@ -1,10 +1,6 @@
 extends Area2D
+@onready var animation_player = $AnimationPlayer
 
 
 func _on_body_entered(body: Node2D) -> void:
-	
-	#print("Mphke")
-	#if body.is_in_group("watergirl"):
-		#queue_free()
-	
-	queue_free()
+	animation_player.play("pickup")
