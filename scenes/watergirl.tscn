@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bp21gobbmx54k"]
 
 [ext_resource type="Texture2D" uid="uid://t2rf5dwh7xu4" path="res://assets/sprites/watergirl/body_idle.png" id="1_8pwif"]
-[ext_resource type="Script" uid="uid://cj6d0b2t15pfc" path="res://scripts/watergirl.gd" id="1_e2aqf"]
+[ext_resource type="Script" uid="uid://dii5jwito0b0p" path="res://scripts/watergirl.gd" id="1_e2aqf"]
 [ext_resource type="Texture2D" uid="uid://6uqdnurxmlnm" path="res://assets/sprites/watergirl/body_run.png" id="2_yu0ls"]
 [ext_resource type="Texture2D" uid="uid://brj6h7bb517pk" path="res://assets/sprites/watergirl/head_fall.png" id="3_e2aqf"]
 [ext_resource type="Texture2D" uid="uid://ci1xigghoitoh" path="res://assets/sprites/watergirl/head_idle.png" id="4_rgw40"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://db0eab65ijaho" path="res://assets/sprites/watergirl/head_run.png" id="6_8pwif"]
 [ext_resource type="Texture2D" uid="uid://gytmo70c8ykw" path="res://assets/sprites/watergirl/head_jump_up.png" id="6_yu0ls"]
 [ext_resource type="AudioStream" uid="uid://bmpcvnhssurb5" path="res://assets/sounds/Watergirl Jump.wav" id="9_rgw40"]
+[ext_resource type="AudioStream" uid="uid://7s7nx32fyc7t" path="res://assets/sounds/Death sound.wav" id="10_fyasl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kcsjj"]
 atlas = ExtResource("2_yu0ls")
@@ -348,4 +349,8 @@ shape = SubResource("CapsuleShape2D_8pwif")
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=1735572597]
 stream = ExtResource("9_rgw40")
+bus = &"SFX"
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="." unique_id=996701278]
+stream = ExtResource("10_fyasl")
 bus = &"SFX"
