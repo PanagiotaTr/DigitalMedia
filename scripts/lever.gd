@@ -2,7 +2,7 @@ extends Node2D
 
 signal toggled(state: bool)
 
-var player_in_range: bool = false
+var players_in_range: Array[Node] = []
 var is_on: bool = false
 
 @onready var interaction_area: Area2D = $InteractionArea
@@ -14,9 +14,13 @@ func _ready() -> void:
 	_update_visual()
 
 func _process(_delta: float) -> void:
-	if player_in_range and Input.is_action_just_pressed("interact"):
-		print("Mphke")
-		activate()
+	for player in players_in_range:
+		if not is_instance_valid(player):
+			continue
+
+		if _player_pressed_interact(player):
+			activate()
+			break
 
 func activate() -> void:
 	is_on = not is_on
@@ -24,15 +28,21 @@ func activate() -> void:
 	toggled.emit(is_on)
 
 func _on_body_entered(body: Node) -> void:
-	if body.is_in_group("player"):
-		player_in_range = true
+	if body.is_in_group("player") and not players_in_range.has(body):
+		players_in_range.append(body)
 
 func _on_body_exited(body: Node) -> void:
 	if body.is_in_group("player"):
-		player_in_range = false
+		players_in_range.erase(body)
 
 func _update_visual() -> void:
-	if is_on:
-		sprite.flip_h = true
-	else:
-		sprite.flip_h = false
+	sprite.flip_h = is_on
+
+# Check if player has pressed the representing button
+func _player_pressed_interact(player: Node) -> bool:
+	if player.is_in_group("fireboy"):
+		return Input.is_action_just_pressed("interact1") # input == interact1
+	elif player.is_in_group("watergirl"):
+		return Input.is_action_just_pressed("interact2") # input == interact 2
+
+	return false

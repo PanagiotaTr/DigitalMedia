@@ -12,10 +12,14 @@
 [ext_resource type="PackedScene" uid="uid://drua8i2vaffjy" path="res://scenes/lever.tscn" id="11_hqns4"]
 [ext_resource type="Texture2D" uid="uid://bmjcu0a4vgnh" path="res://assets/sprites/liquids/purple.png" id="12_nr8wp"]
 [ext_resource type="PackedScene" uid="uid://3ax06fq7susm" path="res://scenes/moving_platform.tscn" id="12_x0ka3"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://bkmdiyksqqv0p" path="res://assets/sprites/liquids/water.png" id="13_d2bti"]
 
 [sub_resource type="TileSet" id="TileSet_rj586"]
 tile_size = Vector2i(32, 32)
+=======
+[ext_resource type="PackedScene" uid="uid://b3wy8sb631hp6" path="res://scenes/button_plate.tscn" id="13_0h7mo"]
+>>>>>>> 7b23bfb99d0c1a3a23db4ba11f33553e457af45c
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
 size = Vector2(26.5, 648.5)
@@ -433,8 +437,29 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(45, 135)
 move_offset = Vector2(30, 0)
 
+<<<<<<< HEAD
 [node name="Blocks" type="TileMapLayer" parent="." unique_id=1781089888]
 tile_map_data = PackedByteArray("AADw/wgAAQAFAAUAAADx/wgAAQAFAAUAAADy/wgAAQAFAAUAAADz/wgAAQAFAAUAAAD0/wgAAQAFAAUAAAD1/wgAAQAFAAUAAAD2/wgAAQAFAAUAAAAKAAgAAQAFAAUAAADw/wQAAQAFAAUAAADx/wQAAQAFAAUAAADy/wQAAQAFAAUAAAD3/wQAAQAFAAUAAAD4/wQAAQAFAAUAAAD5/wQAAQAFAAUAAADz/wQAAAAAAAAAAAD2/wQAAAAAAAAAAAALAAgAAQAFAAUAAAAMAAgAAQAFAAUAAADv/wgAAQAFAAUAAAD3/wgAAwAAAAAAAAAHAAgABAAAAAAAAAACAAMAAQAFAAUAAAADAAMAAQAFAAUAAAAEAAMAAQAFAAUAAAAFAAMABQAAAAAAAAAIAAMAAQAFAAUAAAAJAAMAAQAFAAUAAAAKAAMAAQAFAAUAAAALAAMAAQAFAAUAAAD8/wYAAQAFAAUAAAD9/wYAAQAFAAUAAAD+/wYAAQAFAAUAAAD//wYAAQAFAAUAAAAAAAYAAQAFAAUAAAD0/wQAAAAAAAAAAAD1/wQAAAAAAAAAAAAGAAMABQAAAAAAAAAHAAMABQAAAAAAAAD4/wgAAwAAAAAAAAD5/wgAAwAAAAAAAAAIAAgABAAAAAAAAAAJAAgABAAAAAAAAAADAAgAAQAFAAUAAAACAAgAAQAFAAUAAAABAAgAAQAFAAUAAAAAAAgAAQAFAAUAAAD//wgAAQAFAAUAAAD+/wgAAQAFAAUAAAD9/wgAAQAFAAUAAAD8/wgAAQAFAAUAAAD7/wgAAQAFAAUAAAD6/wgAAQAFAAUAAAAEAAgAAQAFAAUAAAAGAAgAAQAFAAUAAAAFAAgAAQAFAAUAAAA=")
 tile_set = SubResource("TileSet_nr8wp")
+=======
+[node name="ButtonPlate" parent="." unique_id=1618439526 instance=ExtResource("13_0h7mo")]
+position = Vector2(-447, 253)
+scale = Vector2(0.4, 0.4)
+press_depth = 15.0
+
+[node name="MovingPlatform2" parent="." unique_id=1646944329 instance=ExtResource("12_x0ka3")]
+position = Vector2(-281, 166)
+
+[node name="ButtonPlate2" parent="." unique_id=1771812416 instance=ExtResource("13_0h7mo")]
+position = Vector2(127, 251)
+scale = Vector2(0.6, 0.6)
+press_depth = 15.0
+
+[node name="Lever2" parent="." unique_id=333507479 instance=ExtResource("11_hqns4")]
+position = Vector2(-371, 246)
+>>>>>>> 7b23bfb99d0c1a3a23db4ba11f33553e457af45c
 
 [connection signal="toggled" from="Lever" to="MovingPlatform" method="set_active"]
+[connection signal="toggled" from="ButtonPlate" to="MovingPlatform2" method="set_active"]
+[connection signal="toggled" from="ButtonPlate2" to="MovingPlatform2" method="set_active"]
+[connection signal="toggled" from="Lever2" to="MovingPlatform" method="set_active"]
