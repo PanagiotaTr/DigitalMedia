@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://dji3fkrcra8kn" path="res://scenes/blue_coin.tscn" id="8_rj586"]
 [ext_resource type="PackedScene" uid="uid://bsxpekhgodg7s" path="res://scenes/purple_coin.tscn" id="9_4d7sh"]
 [ext_resource type="PackedScene" uid="uid://d24it6kgfg41e" path="res://scenes/green_coin.tscn" id="10_ir8iy"]
+[ext_resource type="PackedScene" uid="uid://drua8i2vaffjy" path="res://scenes/lever.tscn" id="11_hqns4"]
+[ext_resource type="PackedScene" uid="uid://3ax06fq7susm" path="res://scenes/moving_platform.tscn" id="12_x0ka3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
 size = Vector2(26.5, 648.5)
@@ -307,3 +309,13 @@ position = Vector2(-164, 174)
 
 [node name="Green_Coin2" parent="." unique_id=264288463 instance=ExtResource("10_ir8iy")]
 position = Vector2(111, 235)
+
+[node name="Lever" parent="." unique_id=803711641 instance=ExtResource("11_hqns4")]
+position = Vector2(-92, 186)
+scale = Vector2(0.5, 0.5)
+
+[node name="MovingPlatform" parent="." unique_id=350428035 instance=ExtResource("12_x0ka3")]
+position = Vector2(45, 135)
+move_offset = Vector2(30, 0)
+
+[connection signal="toggled" from="Lever" to="MovingPlatform" method="set_active"]
