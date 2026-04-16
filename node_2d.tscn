@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://d24it6kgfg41e" path="res://scenes/green_coin.tscn" id="10_ir8iy"]
 [ext_resource type="PackedScene" uid="uid://drua8i2vaffjy" path="res://scenes/lever.tscn" id="11_hqns4"]
 [ext_resource type="PackedScene" uid="uid://3ax06fq7susm" path="res://scenes/moving_platform.tscn" id="12_x0ka3"]
+[ext_resource type="PackedScene" uid="uid://b3wy8sb631hp6" path="res://scenes/button_plate.tscn" id="13_0h7mo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
 size = Vector2(26.5, 648.5)
@@ -318,4 +319,23 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(45, 135)
 move_offset = Vector2(30, 0)
 
+[node name="ButtonPlate" parent="." unique_id=1618439526 instance=ExtResource("13_0h7mo")]
+position = Vector2(-447, 253)
+scale = Vector2(0.4, 0.4)
+press_depth = 15.0
+
+[node name="MovingPlatform2" parent="." unique_id=1646944329 instance=ExtResource("12_x0ka3")]
+position = Vector2(-281, 166)
+
+[node name="ButtonPlate2" parent="." unique_id=1771812416 instance=ExtResource("13_0h7mo")]
+position = Vector2(127, 251)
+scale = Vector2(0.6, 0.6)
+press_depth = 15.0
+
+[node name="Lever2" parent="." unique_id=333507479 instance=ExtResource("11_hqns4")]
+position = Vector2(-371, 246)
+
 [connection signal="toggled" from="Lever" to="MovingPlatform" method="set_active"]
+[connection signal="toggled" from="ButtonPlate" to="MovingPlatform2" method="set_active"]
+[connection signal="toggled" from="ButtonPlate2" to="MovingPlatform2" method="set_active"]
+[connection signal="toggled" from="Lever2" to="MovingPlatform" method="set_active"]

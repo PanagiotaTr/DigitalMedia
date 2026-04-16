@@ -7,6 +7,7 @@ var start_position: Vector2
 var target_position: Vector2
 var is_moved: bool = false
 var tween: Tween
+var active_count: int = 0
 
 @onready var move_sound: AudioStreamPlayer2D = $MoveSound
 
@@ -30,28 +31,27 @@ func reset_platform() -> void:
 
 func set_active(state: bool) -> void:
 	if state:
+		active_count += 1
+	else:
+		active_count = max(active_count - 1, 0)
+
+	if active_count > 0:
 		move_platform()
 	else:
 		reset_platform()
 
 func _start_tween(destination: Vector2) -> void:
-	# Stop previous tween
 	if tween and tween.is_valid():
 		tween.kill()
 
-	# START LOOP SOUND
 	if move_sound:
 		if not move_sound.playing:
 			move_sound.play()
 
-	# Create tween
 	tween = create_tween()
 	tween.set_trans(Tween.TRANS_SINE)
 	tween.set_ease(Tween.EASE_IN_OUT)
-
 	tween.tween_property(self, "global_position", destination, move_duration)
-
-	# STOP SOUND when movement ends
 	tween.finished.connect(_on_tween_finished)
 
 func _on_tween_finished() -> void:
